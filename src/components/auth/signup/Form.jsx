@@ -93,22 +93,22 @@ export default function SignUpForm() {
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
-      className="auth-form space-y-5"
+      className="auth-form space-y-3.5"
       noValidate
     >
       {/* Header */}
-      <div className="mb-2">
-        <h1 className="text-3xl md:text-4xl font-bold text-gray-900 tracking-tight">
+      <div className="mb-1">
+        <h1 className="text-2xl md:text-3xl font-bold text-gray-900 tracking-tight">
           {t("title")} <span className="text-blue-600">{t("titleSpan")}</span>
         </h1>
-        <p className="text-gray-500 text-sm md:text-base mt-3 leading-relaxed">
+        <p className="text-gray-500 text-xs md:text-sm mt-2 leading-relaxed">
           {t("subtitle")}
         </p>
       </div>
 
       {/* Company Name */}
       <div>
-        <label htmlFor="companyName" className="block text-sm font-semibold text-gray-700 mb-1.5">
+        <label htmlFor="companyName" className="block text-xs font-semibold text-gray-700 mb-1">
           {t("form.companyName.lbl")}
         </label>
         <div className="relative">
@@ -119,7 +119,7 @@ export default function SignUpForm() {
             autoFocus
             maxLength={300}
             placeholder={t("form.companyName.placeholder")}
-            className={`w-full pl-10 rtl:pl-4 rtl:pr-10 pr-4 py-3 rounded-xl border ${
+            className={`w-full pl-10 rtl:pl-4 rtl:pr-10 pr-4 py-2.5 rounded-xl border ${
               errors.companyName
                 ? "border-red-400 focus:ring-red-200"
                 : "border-gray-200 focus:ring-blue-100"
@@ -135,7 +135,7 @@ export default function SignUpForm() {
       {/* First Name + Last Name */}
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div>
-          <label htmlFor="firstName" className="block text-sm font-semibold text-gray-700 mb-1.5">
+          <label htmlFor="firstName" className="block text-xs font-semibold text-gray-700 mb-1">
             {t("form.firstName.lbl")}
           </label>
           <div className="relative">
@@ -145,7 +145,7 @@ export default function SignUpForm() {
               type="text"
               maxLength={100}
               placeholder={t("form.firstName.placeholder")}
-              className={`w-full pl-10 rtl:pl-4 rtl:pr-10 pr-4 py-3 rounded-xl border ${
+              className={`w-full pl-10 rtl:pl-4 rtl:pr-10 pr-4 py-2.5 rounded-xl border ${
                 errors.firstName
                   ? "border-red-400 focus:ring-red-200"
                   : "border-gray-200 focus:ring-blue-100"
@@ -159,7 +159,7 @@ export default function SignUpForm() {
         </div>
 
         <div>
-          <label htmlFor="lastName" className="block text-sm font-semibold text-gray-700 mb-1.5">
+          <label htmlFor="lastName" className="block text-xs font-semibold text-gray-700 mb-1">
             {t("form.lastName.lbl")}
           </label>
           <div className="relative">
@@ -169,7 +169,7 @@ export default function SignUpForm() {
               type="text"
               maxLength={100}
               placeholder={t("form.lastName.placeholder")}
-              className={`w-full pl-10 rtl:pl-4 rtl:pr-10 pr-4 py-3 rounded-xl border ${
+              className={`w-full pl-10 rtl:pl-4 rtl:pr-10 pr-4 py-2.5 rounded-xl border ${
                 errors.lastName
                   ? "border-red-400 focus:ring-red-200"
                   : "border-gray-200 focus:ring-blue-100"
@@ -185,7 +185,7 @@ export default function SignUpForm() {
 
       {/* Business Email */}
       <div>
-        <label htmlFor="email" className="block text-sm font-semibold text-gray-700 mb-1.5">
+        <label htmlFor="email" className="block text-xs font-semibold text-gray-700 mb-1">
           {t("form.email.lbl")}
         </label>
         <div className="relative">
@@ -195,7 +195,7 @@ export default function SignUpForm() {
             type="email"
             maxLength={255}
             placeholder={t("form.email.placeholder")}
-            className={`w-full pl-10 rtl:pl-4 rtl:pr-10 pr-4 py-3 rounded-xl border ${
+            className={`w-full pl-10 rtl:pl-4 rtl:pr-10 pr-4 py-2.5 rounded-xl border ${
               errors.email
                 ? "border-red-400 focus:ring-red-200"
                 : "border-gray-200 focus:ring-blue-100"
@@ -210,7 +210,7 @@ export default function SignUpForm() {
 
       {/* Phone with Country Code */}
       <div>
-        <label htmlFor="phone" className="block text-sm font-semibold text-gray-700 mb-1.5">
+        <label htmlFor="phone" className="block text-xs font-semibold text-gray-700 mb-1">
           {t("form.phone.lbl")} <span className="text-gray-400 font-normal">({t("form.phone.optional")})</span>
         </label>
         <Controller
@@ -273,7 +273,7 @@ export default function SignUpForm() {
       <button
         type="submit"
         disabled={isSubmitting}
-        className="w-full py-3.5 rounded-xl text-white font-semibold text-sm transition-all disabled:opacity-60 disabled:cursor-not-allowed hover:opacity-90 flex items-center justify-center gap-2"
+        className="w-full py-3 rounded-xl text-white font-semibold text-sm transition-all disabled:opacity-60 disabled:cursor-not-allowed hover:opacity-90 flex items-center justify-center gap-2"
         style={{
           background: "linear-gradient(90deg, #005DFF 0%, #5F5CA4 100%)",
         }}

@@ -4,7 +4,7 @@ import Image from "next/image";
 export default function SignUp() {
   return (
     <div className="flex h-[calc(100dvh-80px)] overflow-hidden">
-      <div className="w-full lg:w-1/2 flex items-center justify-center overflow-y-auto">
+      <div className="w-full lg:w-1/2 flex items-center justify-center overflow-y-auto scrollbar-hide">
         <Form />
       </div>
 
