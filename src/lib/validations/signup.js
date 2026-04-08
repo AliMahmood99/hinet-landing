@@ -54,7 +54,7 @@ export const signupSchema = z.object({
       "phoneInvalid"
     ),
 
-  acceptTerms: z.literal(true, {
-    errorMap: () => ({ message: "termsRequired" }),
-  }),
+  acceptTerms: z
+    .boolean()
+    .refine((val) => val === true, "termsRequired"),
 });
