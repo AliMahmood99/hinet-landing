@@ -74,7 +74,8 @@
     "steps": {
       "step1": "Register",
       "step2": "We Review",
-      "step3": "You're In"
+      "step3": "Get Email",
+      "step4": "You're In"
     },
     "form": {
       "companyName": {

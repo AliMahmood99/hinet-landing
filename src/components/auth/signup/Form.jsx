@@ -6,7 +6,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useTranslations, useLocale } from "next-intl";
 import { useRouter } from "@/i18n/navigation";
 import { toast } from "sonner";
-import { Loader2, Building2, Mail, User, Phone, Check, FileText, ClipboardList, ScanSearch, Rocket } from "lucide-react";
+import { Loader2, Building2, Mail, User, Phone, Check, FileText, ClipboardList, ScanSearch, MailCheck, Rocket } from "lucide-react";
 import PhoneInput from "react-phone-number-input";
 import "react-phone-number-input/style.css";
 
@@ -103,27 +103,21 @@ export default function SignUpForm() {
           {t("title")} <span className="text-blue-600">{t("titleSpan")}</span>
         </h1>
         {/* Steps Flow */}
-        <div className="flex items-center gap-2 mt-3">
-          <div className="flex items-center gap-1.5">
-            <div className="w-6 h-6 rounded-full bg-blue-100 flex items-center justify-center">
-              <ClipboardList className="w-3 h-3 text-blue-600" />
+        <div className="flex items-center gap-1.5 mt-3 flex-wrap">
+          {[
+            { icon: ClipboardList, color: "bg-blue-100 text-blue-600", label: t("steps.step1") },
+            { icon: ScanSearch, color: "bg-amber-100 text-amber-600", label: t("steps.step2") },
+            { icon: MailCheck, color: "bg-purple-100 text-purple-600", label: t("steps.step3") },
+            { icon: Rocket, color: "bg-green-100 text-green-600", label: t("steps.step4") },
+          ].map((step, i, arr) => (
+            <div key={i} className="flex items-center gap-1.5">
+              <div className={`w-5 h-5 rounded-full flex items-center justify-center ${step.color.split(" ")[0]}`}>
+                <step.icon className={`w-2.5 h-2.5 ${step.color.split(" ")[1]}`} />
+              </div>
+              <span className="text-[11px] font-medium text-gray-600">{step.label}</span>
+              {i < arr.length - 1 && <div className="w-3 h-px bg-gray-300 mx-0.5" />}
             </div>
-            <span className="text-xs font-medium text-gray-700">{t("steps.step1")}</span>
-          </div>
-          <div className="w-4 h-px bg-gray-300 rtl:rotate-180" />
-          <div className="flex items-center gap-1.5">
-            <div className="w-6 h-6 rounded-full bg-amber-100 flex items-center justify-center">
-              <ScanSearch className="w-3 h-3 text-amber-600" />
-            </div>
-            <span className="text-xs font-medium text-gray-700">{t("steps.step2")}</span>
-          </div>
-          <div className="w-4 h-px bg-gray-300 rtl:rotate-180" />
-          <div className="flex items-center gap-1.5">
-            <div className="w-6 h-6 rounded-full bg-green-100 flex items-center justify-center">
-              <Rocket className="w-3 h-3 text-green-600" />
-            </div>
-            <span className="text-xs font-medium text-gray-700">{t("steps.step3")}</span>
-          </div>
+          ))}
         </div>
       </div>
 
