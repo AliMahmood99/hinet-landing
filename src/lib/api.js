@@ -10,11 +10,7 @@ const api = axios.create({
 
 /**
  * Register a new business account.
- *
- * NOTE: The backend currently requires a `password` field.
- * Since the new flow collects password AFTER admin approval (via email link),
- * we generate a temporary random password. This will be removed once the
- * backend drops the password requirement from registration.
+ * No password at registration — user sets it after admin approval via email link.
  */
 export async function registerBusiness(data) {
   const payload = {
@@ -22,8 +18,6 @@ export async function registerBusiness(data) {
     firstName: data.firstName.trim(),
     lastName: data.lastName.trim(),
     email: data.email.trim().toLowerCase(),
-    // Temporary: backend requires password, user will set real one after approval
-    password: crypto.randomUUID() + "A!1a",
   };
 
   if (data.crn) {
