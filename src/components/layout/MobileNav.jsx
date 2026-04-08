@@ -9,6 +9,11 @@ import Logo from "@/components/common/Logo";
 import Image from "next/image";
 import SwitchLang from "@/components/SwitchLang";
 
+const PROVIDER_LOGIN_URL =
+  process.env.NEXT_PUBLIC_PROVIDER_PANEL_URL
+    ? `${process.env.NEXT_PUBLIC_PROVIDER_PANEL_URL}/login`
+    : "https://provider.hinet.testcode.tech/login";
+
 export default function MobileNav() {
   const t = useTranslations("Navigation");
   const [isOpen, setIsOpen] = useState(false);
@@ -93,13 +98,13 @@ export default function MobileNav() {
                 </span>
               </div>
 
-              <Link
-                href="/auth/signin"
+              <a
+                href={PROVIDER_LOGIN_URL}
                 className="w-full text-center bg-[#F8FAFC] hover:bg-[#E5E7EB] text-[#2563EB] font-semibold rounded-full h-[44px] flex items-center justify-center transition-all"
                 onClick={() => setIsOpen(false)}
               >
                 {t("signIn")}
-              </Link>
+              </a>
               <Link
                 href="/auth/signup"
                 className="w-full text-center bg-[#923CF6] hover:bg-[#7C3AED] text-white font-semibold rounded-full h-[44px] flex items-center justify-center shadow-md hover:shadow-lg transition-all"

@@ -10,8 +10,7 @@ export default function Footer() {
   const tFooter = useTranslations("Footer");
 
   const pathname = usePathname();
-  const noFooterPages = ["/auth/signin", "/auth/signup"];
-  const showFooter = !noFooterPages.includes(pathname);
+  const showFooter = !pathname.startsWith("/auth/");
 
   return showFooter ? (
     <footer className={styles.footer}>

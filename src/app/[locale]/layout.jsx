@@ -7,6 +7,7 @@ import "../globals.css";
 
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
+import { Toaster } from "sonner";
 
 const plusJakartaSans = Plus_Jakarta_Sans({
   subsets: ["latin"],
@@ -38,6 +39,7 @@ export default async function LocaleLayout({ children, params }) {
           <Navbar />
           {children}
           <Footer />
+          <Toaster richColors position="top-center" dir={locale === "ar" ? "rtl" : "ltr"} />
         </NextIntlClientProvider>
       </body>
     </html>

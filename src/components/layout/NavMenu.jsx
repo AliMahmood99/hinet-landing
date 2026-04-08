@@ -3,6 +3,11 @@ import { Link, usePathname } from "@/i18n/navigation";
 import { Button } from "@/components/ui/button";
 import SwitchLang from "@/components/SwitchLang";
 
+const PROVIDER_LOGIN_URL =
+  process.env.NEXT_PUBLIC_PROVIDER_PANEL_URL
+    ? `${process.env.NEXT_PUBLIC_PROVIDER_PANEL_URL}/login`
+    : "https://provider.hinet.testcode.tech/login";
+
 export default function NavMenu() {
   const t = useTranslations("Navigation");
   const pathname = usePathname();
@@ -38,12 +43,12 @@ export default function NavMenu() {
       {/* Action Buttons */}
       <div className="flex items-center gap-[12px]">
         <SwitchLang />
-        <Link
-          href="/auth/signin"
+        <a
+          href={PROVIDER_LOGIN_URL}
           className="text-[15px] font-semibold text-[#4B5563] hover:text-[#1C5F9C] transition-colors px-[16px] py-[12px] rounded-[100px] hover:bg-[#F4F6F9]"
         >
           {t("signIn")}
-        </Link>
+        </a>
         <Link href="/auth/signup">
           <Button className="bg-[#9333EA] hover:bg-[#7E22CE] text-white font-semibold rounded-[100px] px-[24px] h-[48px] shadow-sm hover:shadow-md transition-all text-[15px]">
             {t("getApiAccess")}

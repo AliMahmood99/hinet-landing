@@ -47,7 +47,7 @@
     }
   },
   "Contact": {
-    "title": "We’d love to here from you.",
+    "title": "We'd love to here from you.",
     "subtitle": "Have a question about HiNet or need support ?",
     "gmail": "hinet@gmail.com",
     "phone": "+966 00000 00000",
@@ -70,26 +70,74 @@
   "SignUp": {
     "title": "Get Started with ",
     "titleSpan": "HiNet",
-    "subtitle": "Fill in your details and we'll send you a registration link to set up your business account and API keys.",
+    "subtitle": "Register your business and we'll review your application. Once approved, you'll receive an email to set up your password and access your dashboard.",
     "form": {
-      "name": { "lbl": "Full Name", "placeholder": "e.g. Ali Atwan" },
-      "email": { "lbl": "Business Email", "placeholder": "you@company.com" },
+      "companyName": {
+        "lbl": "Company Name",
+        "placeholder": "e.g. Acme Technologies"
+      },
+      "firstName": {
+        "lbl": "First Name",
+        "placeholder": "e.g. Ali"
+      },
+      "lastName": {
+        "lbl": "Last Name",
+        "placeholder": "e.g. Atwan"
+      },
+      "email": {
+        "lbl": "Business Email",
+        "placeholder": "you@company.com"
+      },
       "phone": {
         "lbl": "Phone Number",
+        "optional": "Optional",
         "placeholder": "+966 xx xxx xxxx"
       },
-      "crn": {
-        "lbl": "Commercial Registration No. (Optional)",
-        "placeholder": "e.g. xxxxxxxxxxxx"
+      "terms": {
+        "text": "I agree to the",
+        "termsLink": "Terms of Service",
+        "and": "and",
+        "privacyLink": "Privacy Policy"
       },
-      "password": {
-        "lbl": "Password",
-        "placeholder": "xxxxxxxxxxxx"
+      "errors": {
+        "companyNameMin": "Company name must be at least 2 characters",
+        "companyNameMax": "Company name must be at most 300 characters",
+        "firstNameRequired": "First name is required",
+        "firstNameMax": "First name must be at most 100 characters",
+        "lastNameRequired": "Last name is required",
+        "lastNameMax": "Last name must be at most 100 characters",
+        "emailRequired": "Email is required",
+        "emailInvalid": "Please enter a valid email address",
+        "emailMax": "Email must be at most 255 characters",
+        "emailPersonal": "Please use a business email (personal emails like Gmail, Yahoo are not accepted)",
+        "emailExists": "This email is already registered",
+        "phoneInvalid": "Please enter a valid phone number",
+        "termsRequired": "You must accept the Terms & Privacy Policy",
+        "validationFailed": "Please check the form and fix the highlighted errors",
+        "rateLimited": "Too many attempts. Please try again in a few minutes",
+        "networkError": "Network error. Please check your connection and try again",
+        "generic": "Something went wrong. Please try again later"
       },
-      "submit": "Send Registration Link  →",
+      "submit": "Create Account →",
+      "submitting": "Creating...",
+      "successMessage": "Your application has been submitted successfully!",
       "underSubmit": "Already a partner?",
       "underSubmitSpan": " Sign In"
     }
+  },
+  "SignUpSuccess": {
+    "title": "Application Submitted!",
+    "subtitle": "Thank you for registering with HiNet",
+    "description": "Our team will review your application and get back to you shortly. Once approved, you'll receive an email with a link to set up your password and access your dashboard.",
+    "whatNext": "What happens next?",
+    "steps": {
+      "step1": "Our team reviews your application (usually within 24 hours)",
+      "step2": "You'll receive an approval email with a secure link",
+      "step3": "Set your password and access your dashboard",
+      "step4": "Start integrating eSIMs into your platform"
+    },
+    "backHome": "Back to Home",
+    "contactUs": "Contact Support"
   },
   "SignIn": {
     "title": "Welcome Back",
@@ -190,13 +238,13 @@
   },
   "FAQ": {
     "badge": "FAQ",
-    "title": "You’ve Got Questions, We’ve Got Connections.",
+    "title": "You've Got Questions, We've Got Connections.",
     "description": "Everything you need to know about HiNet eSIMs, setup, and global coverage.",
     "contactUs": "Contact Us",
     "questions": {
       "q1": {
         "question": "What exactly is an eSIM, and how does it work?",
-        "answer": "An eSIM is a digital version of the physical SIM card you already use. It’s embedded in your phone, allowing you to download a data plan instantly without swapping plastic cards. Just scan, activate, and you’re online."
+        "answer": "An eSIM is a digital version of the physical SIM card you already use. It's embedded in your phone, allowing you to download a data plan instantly without swapping plastic cards. Just scan, activate, and you're online."
       },
       "q2": {
         "question": "What is the HiNet App?",
