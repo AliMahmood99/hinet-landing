@@ -1,6 +1,7 @@
 "use client";
 
 import { useTranslations } from "next-intl";
+import { Link } from "@/i18n/navigation";
 import Image from "next/image";
 export default function UnderForm() {
   const t = useTranslations("Contact");
@@ -8,7 +9,7 @@ export default function UnderForm() {
     <div className="under-form">
       <h2>{t("underForm.title")}</h2>
       <p>{t("underForm.description")}</p>
-      <button className="">
+      <Link href="/auth/signup" className="">
         <span className="get-started-txt bg-gradient-to-r from-[#005dff] to-[#5f5ca4] bg-clip-text text-transparent">
           {t("underForm.button")}
         </span>
@@ -19,7 +20,7 @@ export default function UnderForm() {
           height={40.76}
           className="img"
         />
-      </button>
+      </Link>
     </div>
   );
 }

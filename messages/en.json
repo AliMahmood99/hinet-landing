@@ -9,6 +9,7 @@
     "contact": "Contact",
     "getApp": "Get the App",
     "getApiAccess": "Get API Access",
+    "signIn": "Sign In",
     "switchLanguage": "Switch Language"
   },
   "Hero": {
@@ -18,8 +19,8 @@
     "titleMiddle": " to the World",
     "titleEnd": "— Under Your Brand",
     "description": "HiNet B2B gives you a single powerful API to sell eSIM packages across 200+ countries under your own brand. Set your own margins, deliver instantly, and scale",
-    "bookDemo": "Book A Demo",
-    "contactUs": "Contact Us"
+    "getStarted": "Get Started Free",
+    "bookDemo": "Book A Demo"
   },
   "HowItWorks": {
     "badge": "How It Works",

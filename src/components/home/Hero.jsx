@@ -10,7 +10,7 @@ import {
   Tag,
 } from "lucide-react";
 import Image from "next/image";
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 import { motion } from "framer-motion";
 
 export default function Hero() {
@@ -240,7 +240,8 @@ export default function Hero() {
             variants={itemVariants}
             className="flex flex-col sm:flex-row items-center gap-4 mb-2 lg:mb-16"
           >
-            <button
+            <Link
+              href="/auth/signup"
               className="flex items-center gap-2 px-10 py-4 text-white font-bold transition-all group hover:opacity-90"
               style={{
                 borderRadius: "32px",
@@ -248,9 +249,9 @@ export default function Hero() {
                 background: "linear-gradient(90deg, #005DFF 0%, #5F5CA4 100%)",
               }}
             >
-              {t("bookDemo")}
+              {t("getStarted")}
               <ArrowUpRight className="w-5 h-5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-            </button>
+            </Link>
             <Link
               href="/contactUs"
               className="flex items-center gap-2 px-10 py-4 text-[#2563EB] font-bold transition-all group hover:bg-black/5"
@@ -260,7 +261,7 @@ export default function Hero() {
                 background: "rgba(0, 0, 0, 0.04)",
               }}
             >
-              {t("contactUs")}
+              {t("bookDemo")}
               <ArrowUpRight className="w-5 h-5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
             </Link>
           </motion.div>

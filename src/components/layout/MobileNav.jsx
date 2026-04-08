@@ -93,19 +93,20 @@ export default function MobileNav() {
                 </span>
               </div>
 
-              <Button
-                variant="secondary"
-                className="w-full bg-[#F8FAFC] hover:bg-[#E5E7EB] text-[#2563EB] font-semibold rounded-full h-[44px]"
+              <Link
+                href="/auth/signin"
+                className="w-full text-center bg-[#F8FAFC] hover:bg-[#E5E7EB] text-[#2563EB] font-semibold rounded-full h-[44px] flex items-center justify-center transition-all"
                 onClick={() => setIsOpen(false)}
               >
-                {t("getApp")}
-              </Button>
-              <Button
-                className="w-full bg-[#923CF6] hover:bg-[#7C3AED] text-white font-semibold rounded-full h-[44px] shadow-md hover:shadow-lg transition-all"
+                {t("signIn")}
+              </Link>
+              <Link
+                href="/auth/signup"
+                className="w-full text-center bg-[#923CF6] hover:bg-[#7C3AED] text-white font-semibold rounded-full h-[44px] flex items-center justify-center shadow-md hover:shadow-lg transition-all"
                 onClick={() => setIsOpen(false)}
               >
                 {t("getApiAccess")}
-              </Button>
+              </Link>
             </div>
           </div>
         </div>

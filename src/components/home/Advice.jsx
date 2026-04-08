@@ -1,7 +1,7 @@
 "use client";
 
 import { useTranslations } from "next-intl";
-import Image from "next/image";
+import { Link } from "@/i18n/navigation";
 import { motion } from "framer-motion";
 
 export default function Advice() {
@@ -59,8 +59,8 @@ export default function Advice() {
           variants={fadeInUp}
           className="flex flex-col items-center justify-center w-full mt-6 lg:mt-8 px-4"
         >
-          <a
-            href="#"
+          <Link
+            href="/auth/signup"
             className="flex items-center justify-center self-stretch h-[77px] py-[14px] px-[20px] rounded-[32px] border border-white bg-black/[0.04] transition-colors hover:bg-black/[0.08] text-[#3C57DA] font-semibold text-[15px] sm:text-[18px] gap-2 w-full max-w-[500px] mx-auto"
           >
             <span>{t("button")}</span>
@@ -78,7 +78,7 @@ export default function Advice() {
               <line x1="7" y1="17" x2="17" y2="7"></line>
               <polyline points="7 7 17 7 17 17"></polyline>
             </svg>
-          </a>
+          </Link>
         </motion.div>
       </motion.div>
     </section>

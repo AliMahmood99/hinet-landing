@@ -18,7 +18,7 @@ export default function NavMenu() {
       {/* Navigation Links */}
       <div className="flex items-center gap-2">
         {navLinks.map((link) => {
-          const isActive = pathname === link.href; // Default to business highlighted to match design if no path
+          const isActive = pathname === link.href;
           return (
             <Link
               key={link.href}
@@ -38,9 +38,17 @@ export default function NavMenu() {
       {/* Action Buttons */}
       <div className="flex items-center gap-[12px]">
         <SwitchLang />
-        <Button className="bg-[#9333EA] hover:bg-[#7E22CE] text-white font-semibold rounded-[100px] px-[24px] h-[48px] shadow-sm hover:shadow-md transition-all text-[15px]">
-          {t("getApiAccess")}
-        </Button>
+        <Link
+          href="/auth/signin"
+          className="text-[15px] font-semibold text-[#4B5563] hover:text-[#1C5F9C] transition-colors px-[16px] py-[12px] rounded-[100px] hover:bg-[#F4F6F9]"
+        >
+          {t("signIn")}
+        </Link>
+        <Link href="/auth/signup">
+          <Button className="bg-[#9333EA] hover:bg-[#7E22CE] text-white font-semibold rounded-[100px] px-[24px] h-[48px] shadow-sm hover:shadow-md transition-all text-[15px]">
+            {t("getApiAccess")}
+          </Button>
+        </Link>
       </div>
     </div>
   );
