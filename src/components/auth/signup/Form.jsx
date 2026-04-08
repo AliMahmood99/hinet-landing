@@ -1,6 +1,6 @@
 "use client";
 
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 import FormField from "../../ui/FormField";
 import { useTranslations } from "next-intl";
 import SubmitBtn from "../../ui/SubmitBtn";
@@ -58,12 +58,12 @@ export default function Form() {
 
         {/* الفوتر الصغير */}
         <p className="text-center text-sm text-gray-500 mt-6 font-bold">
-          Already a partner?{" "}
+          {t("form.underSubmit")}
           <Link
-            href="/signin"
+            href="/auth/signin"
             className="text-[#4c5de6] hover:underline transition-all"
           >
-            Sign In
+            {t("form.underSubmitSpan")}
           </Link>
         </p>
       </form>
