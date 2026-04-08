@@ -26,6 +26,10 @@ export async function registerBusiness(data) {
     password: crypto.randomUUID() + "A!1a",
   };
 
+  if (data.crn) {
+    payload.crn = data.crn.trim();
+  }
+
   if (data.phone) {
     payload.phone = data.phone;
   }

@@ -6,7 +6,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useTranslations, useLocale } from "next-intl";
 import { useRouter } from "@/i18n/navigation";
 import { toast } from "sonner";
-import { Loader2, Building2, Mail, User, Phone, Check } from "lucide-react";
+import { Loader2, Building2, Mail, User, Phone, Check, FileText } from "lucide-react";
 import PhoneInput from "react-phone-number-input";
 import "react-phone-number-input/style.css";
 
@@ -34,6 +34,7 @@ export default function SignUpForm() {
       firstName: "",
       lastName: "",
       email: "",
+      crn: "",
       phone: "",
       acceptTerms: false,
     },
@@ -205,6 +206,31 @@ export default function SignUpForm() {
         </div>
         {errors.email && (
           <p className="text-red-500 text-xs mt-1">{getErrorMessage(errors.email)}</p>
+        )}
+      </div>
+
+      {/* Commercial Registration Number */}
+      <div>
+        <label htmlFor="crn" className="block text-xs font-semibold text-gray-700 mb-1">
+          {t("form.crn.lbl")} <span className="text-gray-400 font-normal">({t("form.phone.optional")})</span>
+        </label>
+        <div className="relative">
+          <FileText className="absolute left-3 rtl:left-auto rtl:right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
+          <input
+            id="crn"
+            type="text"
+            maxLength={50}
+            placeholder={t("form.crn.placeholder")}
+            className={`w-full pl-10 rtl:pl-4 rtl:pr-10 pr-4 py-2.5 rounded-xl border ${
+              errors.crn
+                ? "border-red-400 focus:ring-red-200"
+                : "border-gray-200 focus:ring-blue-100"
+            } focus:outline-none focus:ring-2 focus:border-transparent transition-all text-sm`}
+            {...register("crn")}
+          />
+        </div>
+        {errors.crn && (
+          <p className="text-red-500 text-xs mt-1">{getErrorMessage(errors.crn)}</p>
         )}
       </div>
 

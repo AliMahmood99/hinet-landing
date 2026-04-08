@@ -35,6 +35,12 @@ export const signupSchema = z.object({
     .min(1, "lastNameRequired")
     .max(100, "lastNameMax"),
 
+  crn: z
+    .string()
+    .max(50, "crnMax")
+    .optional()
+    .or(z.literal("")),
+
   email: z
     .string()
     .min(1, "emailRequired")

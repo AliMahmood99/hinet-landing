@@ -88,6 +88,10 @@
         "lbl": "Business Email",
         "placeholder": "you@company.com"
       },
+      "crn": {
+        "lbl": "Commercial Registration No.",
+        "placeholder": "e.g. xxxxxxxxxxxx"
+      },
       "phone": {
         "lbl": "Phone Number",
         "optional": "Optional",
@@ -106,6 +110,7 @@
         "firstNameMax": "First name must be at most 100 characters",
         "lastNameRequired": "Last name is required",
         "lastNameMax": "Last name must be at most 100 characters",
+        "crnMax": "Registration number must be at most 50 characters",
         "emailRequired": "Email is required",
         "emailInvalid": "Please enter a valid email address",
         "emailMax": "Email must be at most 255 characters",
