@@ -90,11 +90,6 @@ export default function SignUpForm() {
     }
   };
 
-  const providerLoginUrl =
-    process.env.NEXT_PUBLIC_PROVIDER_PANEL_URL
-      ? `${process.env.NEXT_PUBLIC_PROVIDER_PANEL_URL}/login`
-      : "https://provider.hinet.testcode.tech/login";
-
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
@@ -293,16 +288,6 @@ export default function SignUpForm() {
         )}
       </button>
 
-      {/* Footer Link */}
-      <p className="text-center text-sm text-gray-500 mt-6 font-bold">
-        {t("form.underSubmit")}{" "}
-        <a
-          href={providerLoginUrl}
-          className="text-[#4c5de6] hover:underline transition-all"
-        >
-          {t("form.underSubmitSpan")}
-        </a>
-      </p>
     </form>
   );
 }
