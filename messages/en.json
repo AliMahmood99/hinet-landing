@@ -70,7 +70,12 @@
   "SignUp": {
     "title": "Get Started with ",
     "titleSpan": "HiNet",
-    "subtitle": "Register your business and we'll review your application. Once approved, you'll receive an email to set up your password and access your dashboard.",
+    "subtitle": "Register your business and get started in minutes.",
+    "steps": {
+      "step1": "Register",
+      "step2": "We Review",
+      "step3": "You're In"
+    },
     "form": {
       "companyName": {
         "lbl": "Company Name",

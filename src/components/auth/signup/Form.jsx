@@ -6,7 +6,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useTranslations, useLocale } from "next-intl";
 import { useRouter } from "@/i18n/navigation";
 import { toast } from "sonner";
-import { Loader2, Building2, Mail, User, Phone, Check, FileText } from "lucide-react";
+import { Loader2, Building2, Mail, User, Phone, Check, FileText, ClipboardList, ScanSearch, Rocket } from "lucide-react";
 import PhoneInput from "react-phone-number-input";
 import "react-phone-number-input/style.css";
 
@@ -102,9 +102,29 @@ export default function SignUpForm() {
         <h1 className="text-2xl md:text-3xl font-bold text-gray-900 tracking-tight">
           {t("title")} <span className="text-blue-600">{t("titleSpan")}</span>
         </h1>
-        <p className="text-gray-500 text-xs md:text-sm mt-2 leading-relaxed">
-          {t("subtitle")}
-        </p>
+        {/* Steps Flow */}
+        <div className="flex items-center gap-2 mt-3">
+          <div className="flex items-center gap-1.5">
+            <div className="w-6 h-6 rounded-full bg-blue-100 flex items-center justify-center">
+              <ClipboardList className="w-3 h-3 text-blue-600" />
+            </div>
+            <span className="text-xs font-medium text-gray-700">{t("steps.step1")}</span>
+          </div>
+          <div className="w-4 h-px bg-gray-300 rtl:rotate-180" />
+          <div className="flex items-center gap-1.5">
+            <div className="w-6 h-6 rounded-full bg-amber-100 flex items-center justify-center">
+              <ScanSearch className="w-3 h-3 text-amber-600" />
+            </div>
+            <span className="text-xs font-medium text-gray-700">{t("steps.step2")}</span>
+          </div>
+          <div className="w-4 h-px bg-gray-300 rtl:rotate-180" />
+          <div className="flex items-center gap-1.5">
+            <div className="w-6 h-6 rounded-full bg-green-100 flex items-center justify-center">
+              <Rocket className="w-3 h-3 text-green-600" />
+            </div>
+            <span className="text-xs font-medium text-gray-700">{t("steps.step3")}</span>
+          </div>
+        </div>
       </div>
 
       {/* Company Name */}
