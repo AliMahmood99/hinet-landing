@@ -1,0 +1,19 @@
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.field input,
+.field textarea {
+  transition: all 0.3s ease; /* نعومة في تغير اللون والضل */
+}
+
+/* لما المستخدم يضغط جوه الـ Input عشان يكتب */
+.field input:focus,
+.field textarea:focus {
+  outline: none;
+  border-color: #005dff; /* لون الـ Brand بتاعك */
+  box-shadow: 0 0 0 4px rgba(0, 93, 255, 0.1); /* تأثير توهج (Glow) خفيف */
+  transform: translateY(-2px); /* الـ Input بيترفع سنة كأنه بيتجاوب معاك */
+}
