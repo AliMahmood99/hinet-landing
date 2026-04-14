@@ -276,6 +276,38 @@
     "description": "No infrastructure costs. No complexity. Get your API keys, integrate in hours, and go live with full white-label eSIM in days.",
     "button": "Get Started — It's Free to Test"
   },
+  "TravelersHero": {
+    "launchBadge": "Launch Global eSIM. Instantly.",
+    "titleStart": "Stay ",
+    "titleHighlight": "Connected",
+    "titleMiddle": ",",
+    "titleEnd": "Everywhere ✈️ You Go.",
+    "description": "Get instant access to local data at local prices in 190+ countries. No roaming fees, no physical SIM cards."
+  },
+  "TravelersHowItWorks": {
+    "badge": "How It Works",
+    "titleHighlight": "Three",
+    "titleEnd": " Steps to Global Freedom",
+    "description": "Forget physical SIM cards and roaming headaches. Here's how you get connected in seconds.",
+    "steps": {
+      "step1": {
+        "title": "Find Your Destination",
+        "description": "Browse over 190+ countries and choose the data plan that fits your trip. From a quick layover to a month-long adventure."
+      },
+      "step2": {
+        "title": "Pick Your Plan",
+        "description": "Compare local and regional packages with transparent pricing. No hidden fees, just pure high-speed data."
+      },
+      "step3": {
+        "title": "Install & Activate",
+        "description": "Scan your unique QR code or install manually through the app. Switch on your eSIM the moment your plane touches the tarmac."
+      }
+    }
+  },
+  "TravelersCTA": {
+    "title": "Never Land Without a Connection.",
+    "description": "Download HiNet App Tech Now and Make Your at your doorstep, anytime, anywhere !"
+  },
   "Footer": {
     "privacy": "Privacy & Policy",
     "rights": "© 2026 Utr . All right reserved"

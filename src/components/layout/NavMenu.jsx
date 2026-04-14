@@ -37,6 +37,14 @@ export default function NavMenu() {
 
       {/* Action Buttons */}
       <div className="flex items-center gap-[12px]">
+        <Link href="/contactUs">
+          <Button
+            variant="outline"
+            className="border-[#DEE5ED] bg-white hover:bg-[#F4F6F9] text-[#1F2937] font-semibold rounded-[100px] px-[24px] h-[48px] shadow-sm hover:shadow-md transition-all text-[15px]"
+          >
+            {t("getApp")}
+          </Button>
+        </Link>
         <SwitchLang />
         <Link href="/auth/signup">
           <Button className="bg-[#9333EA] hover:bg-[#7E22CE] text-white font-semibold rounded-[100px] px-[24px] h-[48px] shadow-sm hover:shadow-md transition-all text-[15px]">
