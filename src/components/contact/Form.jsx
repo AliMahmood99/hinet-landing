@@ -1,19 +1,22 @@
 "use client";
 
 import { useState } from "react";
-import { useTranslations } from "next-intl";
+import { useTranslations, useLocale } from "next-intl";
 import { toast } from "sonner";
-import SubmitBtn from "../ui/SubmitBtn";
+import PhoneInput from "react-phone-number-input";
+import "react-phone-number-input/style.css";
 import "./contact.css";
 
 export default function Form() {
   const t = useTranslations("Contact");
+  const locale = useLocale();
 
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     phone: "",
     message: "",
+    website: "", // honeypot
   });
   const [errors, setErrors] = useState({});
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -60,6 +63,7 @@ export default function Form() {
           email: formData.email.trim().toLowerCase(),
           phone: formData.phone.trim() || undefined,
           message: formData.message.trim(),
+          website: formData.website || undefined,
         }),
       });
 
@@ -70,7 +74,7 @@ export default function Form() {
       }
 
       setIsSubmitted(true);
-      setFormData({ name: "", email: "", phone: "", message: "" });
+      setFormData({ name: "", email: "", phone: "", message: "", website: "" });
       toast.success(t("form.success"));
     } catch (err) {
       if (err.message?.includes("Too many")) {
@@ -105,6 +109,19 @@ export default function Form() {
 
   return (
     <form className="contact-form" onSubmit={handleSubmit} noValidate>
+      {/* Honeypot — hidden from humans, bots fill it */}
+      <div style={{ position: "absolute", left: "-9999px", opacity: 0, height: 0, overflow: "hidden" }} aria-hidden="true">
+        <input
+          type="text"
+          name="website"
+          id="website"
+          tabIndex={-1}
+          autoComplete="off"
+          value={formData.website}
+          onChange={handleChange}
+        />
+      </div>
+
       <div className="form-grid">
         <div className="inputs-col">
           <div className="field">
@@ -151,21 +168,28 @@ export default function Form() {
             <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-1.5">
               {t("form.phone.lbl")}
             </label>
-            <input
-              type="text"
-              id="phone"
+            <PhoneInput
+              international
+              countryCallingCodeEditable={false}
+              defaultCountry={locale === "ar" ? "SA" : "US"}
               value={formData.phone}
-              onChange={handleChange}
-              placeholder={t("form.phone.placeholder")}
+              onChange={(value) => {
+                setFormData((prev) => ({ ...prev, phone: value || "" }));
+                if (errors.phone) {
+                  setErrors((prev) => ({ ...prev, phone: undefined }));
+                }
+              }}
               disabled={isSubmitting}
-              className="w-full px-4 py-2.5 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all placeholder:text-gray-400"
+              placeholder={t("form.phone.placeholder")}
             />
           </div>
         </div>
 
         <div className="message-col">
           <div className="field h-full">
-            <label htmlFor="message">{t("form.message.lbl")}</label>
+            <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1.5">
+              {t("form.message.lbl")}
+            </label>
             <textarea
               id="message"
               value={formData.message}

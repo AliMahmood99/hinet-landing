@@ -196,6 +196,61 @@
   animation: up-down 0.8s ease-in-out infinite alternate;
 }
 
+
+/* ─── Phone Input (react-phone-number-input) ─── */
+.contact-form .PhoneInput {
+  background: #f8fbff;
+  border: 1px solid #eef2f6;
+  border-radius: 12px;
+  padding: 0 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: border-color 0.2s;
+}
+
+.contact-form .PhoneInput:focus-within {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.15);
+}
+
+.contact-form .PhoneInputInput {
+  background: transparent;
+  border: none;
+  outline: none;
+  padding: 12px 0;
+  font-family: inherit;
+  font-size: 15px;
+  width: 100%;
+  color: inherit;
+}
+
+.contact-form .PhoneInputInput::placeholder {
+  color: #9ca3af;
+}
+
+.contact-form .PhoneInputCountry {
+  margin-right: 4px;
+}
+
+.contact-form .PhoneInputCountryIcon {
+  width: 24px;
+  height: 18px;
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.contact-form .PhoneInputCountrySelectArrow {
+  margin-left: 4px;
+  opacity: 0.5;
+}
+
+/* RTL: force phone input to LTR (phone numbers are always LTR) */
+[dir="rtl"] .contact-form .PhoneInput {
+  direction: ltr;
+  text-align: left;
+}
+
 @media (max-width: 768px) {
   .under-form {
     padding: 50px 16px;
