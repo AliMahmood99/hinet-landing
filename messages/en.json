@@ -74,7 +74,8 @@
         "emailInvalid": "Please enter a valid email address",
         "messageRequired": "Message must be at least 10 characters",
         "tooMany": "Too many requests. Please try again later.",
-        "generic": "Something went wrong. Please try again."
+        "generic": "Something went wrong. Please try again.",
+        "phoneInvalid": "Please enter a valid phone number"
       },
       "success": "Your message has been sent successfully!",
       "successTitle": "Message Sent!",

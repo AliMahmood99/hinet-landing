@@ -250,6 +250,12 @@
   direction: ltr;
   text-align: left;
 }
+/* Phone input error state */
+.contact-form .PhoneInput.phone-error,
+.contact-form .phone-error .PhoneInput {
+  border-color: #f87171;
+}
+
 
 @media (max-width: 768px) {
   .under-form {

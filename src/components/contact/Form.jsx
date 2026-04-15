@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { useTranslations, useLocale } from "next-intl";
 import { toast } from "sonner";
-import PhoneInput from "react-phone-number-input";
+import PhoneInput, { isValidPhoneNumber } from "react-phone-number-input";
 import "react-phone-number-input/style.css";
 import "./contact.css";
 
@@ -36,6 +36,9 @@ export default function Form() {
     }
     if (!formData.message.trim() || formData.message.trim().length < 10) {
       newErrors.message = t("form.errors.messageRequired");
+    }
+    if (formData.phone && !isValidPhoneNumber(formData.phone)) {
+      newErrors.phone = t("form.errors.phoneInvalid");
     }
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
