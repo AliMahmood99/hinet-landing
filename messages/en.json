@@ -52,14 +52,35 @@
     "gmail": "hinet@gmail.com",
     "phone": "+966 00000 00000",
     "form": {
-      "name": { "lbl": "Name", "placeholder": "Enter your name" },
-      "email": { "lbl": "Email", "placeholder": "Enter your email" },
+      "name": {
+        "lbl": "Name",
+        "placeholder": "Enter your name"
+      },
+      "email": {
+        "lbl": "Email",
+        "placeholder": "Enter your email"
+      },
       "phone": {
         "lbl": "Phone Number",
         "placeholder": "Enter your phone Number"
       },
-      "message": { "lbl": "Message", "placeholder": "Your Message..." },
-      "submit": "Submit"
+      "message": {
+        "lbl": "Message",
+        "placeholder": "Your Message..."
+      },
+      "submit": "Submit",
+      "errors": {
+        "nameRequired": "Name must be at least 2 characters",
+        "emailInvalid": "Please enter a valid email address",
+        "messageRequired": "Message must be at least 10 characters",
+        "tooMany": "Too many requests. Please try again later.",
+        "generic": "Something went wrong. Please try again."
+      },
+      "success": "Your message has been sent successfully!",
+      "successTitle": "Message Sent!",
+      "successDesc": "Thank you for reaching out. We'll get back to you as soon as possible.",
+      "sendAnother": "Send Another Message",
+      "submitting": "Sending..."
     },
     "underForm": {
       "title": "Start Selling eSIMs Under Your Brand Today",
@@ -156,7 +177,10 @@
     "title_p2": "Partner",
     "subtitle": "Enter your credentials to continue.",
     "form": {
-      "email": { "lbl": "Business Email", "placeholder": "you@company.com" },
+      "email": {
+        "lbl": "Business Email",
+        "placeholder": "you@company.com"
+      },
       "password": {
         "lbl": "Password",
         "placeholder": "xxxxxxxxxxxx"
