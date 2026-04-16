@@ -1,24 +1,6 @@
 import { z } from "zod";
 import { isValidPhoneNumber } from "react-phone-number-input";
 
-const BLOCKED_EMAIL_DOMAINS = [
-  "gmail.com",
-  "yahoo.com",
-  "hotmail.com",
-  "outlook.com",
-  "aol.com",
-  "icloud.com",
-  "mail.com",
-  "protonmail.com",
-  "yandex.com",
-  "zoho.com",
-  "live.com",
-  "msn.com",
-  "me.com",
-  "mac.com",
-  "googlemail.com",
-];
-
 export const signupSchema = z.object({
   companyName: z
     .string()
@@ -45,11 +27,7 @@ export const signupSchema = z.object({
     .string()
     .min(1, "emailRequired")
     .email("emailInvalid")
-    .max(255, "emailMax")
-    .refine((email) => {
-      const domain = email.split("@")[1]?.toLowerCase();
-      return domain && !BLOCKED_EMAIL_DOMAINS.includes(domain);
-    }, "emailPersonal"),
+    .max(255, "emailMax"),
 
   phone: z
     .string()
