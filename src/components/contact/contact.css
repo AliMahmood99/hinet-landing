@@ -250,6 +250,44 @@
   direction: ltr;
   text-align: left;
 }
+/* Submit button — gradient CTA */
+.submit-btn {
+  width: 100%;
+  max-width: 320px;
+  align-self: center;
+  height: 56px;
+  border: none;
+  border-radius: 16px;
+  background: linear-gradient(90deg, #005dff 0%, #5f5ca4 100%);
+  color: #fff;
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  box-shadow: 0 8px 20px rgba(0, 93, 255, 0.18);
+  transition: transform 0.15s ease, box-shadow 0.2s ease, opacity 0.2s ease;
+}
+
+.submit-btn:hover:not(:disabled) {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 26px rgba(0, 93, 255, 0.28);
+}
+
+.submit-btn:active:not(:disabled) {
+  transform: translateY(0);
+  box-shadow: 0 6px 16px rgba(0, 93, 255, 0.2);
+}
+
+.submit-btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
 /* Phone input error state */
 .contact-form .PhoneInput.phone-error,
 .contact-form .phone-error .PhoneInput {
@@ -432,4 +470,35 @@
 
 .under-form button:hover .img {
   transform: translate(4px, -4px); /* السهم بيطير لبرة سنة لما تشاور ع الزرار */
+}
+
+/* Upper contact buttons — now <a> elements; keep same visual as buttons */
+.contact .btn-container a.email-btn,
+.contact .btn-container a.phone-btn {
+  flex: 1;
+  min-width: 200px;
+  height: 66px;
+  border-radius: 18px;
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  background: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.contact .btn-container a.email-btn:hover,
+.contact .btn-container a.phone-btn:hover {
+  background: #f8fbff;
+  border-color: #005dff;
+}
+
+.contact .btn-container a.email-btn p,
+.contact .btn-container a.phone-btn p {
+  margin: 0;
+  color: var(--foreground);
+  font-weight: 500;
 }
