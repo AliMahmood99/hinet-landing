@@ -170,3 +170,35 @@ body {
   width: 50vh;
   background-color: blanchedalmond;
 }
+
+
+/* ─── Get the App: attention pulse when navigated via #get-app anchor ─── */
+@keyframes getAppPulse {
+  0%   { box-shadow: 0 0 0 0 rgba(0, 93, 255, 0.55), 0 0 0 0 rgba(110, 81, 224, 0.45); transform: scale(1); }
+  40%  { box-shadow: 0 0 0 18px rgba(0, 93, 255, 0.10), 0 0 0 28px rgba(110, 81, 224, 0.06); transform: scale(1.04); }
+  70%  { box-shadow: 0 0 0 22px rgba(0, 93, 255, 0.0), 0 0 0 36px rgba(110, 81, 224, 0.0); transform: scale(1.02); }
+  100% { box-shadow: 0 0 0 0 rgba(0, 93, 255, 0); transform: scale(1); }
+}
+
+.get-app-highlight {
+  border-radius: 24px;
+  animation: getAppPulse 1.3s ease-out 2;
+  position: relative;
+  z-index: 1;
+}
+
+.get-app-highlight .store-btn-link {
+  animation: getAppPulse 1.3s ease-out 2;
+  border-radius: 16px;
+  will-change: transform, box-shadow;
+}
+
+.store-btn-link {
+  display: inline-block;
+  border-radius: 16px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.store-btn-link:hover {
+  transform: translateY(-2px) scale(1.03);
+}

@@ -60,7 +60,13 @@ export default function TravelersCTA() {
           className="flex flex-row items-center justify-center gap-4 lg:gap-[20px] mt-6 lg:mt-8"
         >
           {/* Google Play Button */}
-          <a href="#" className="hover:opacity-80 transition-opacity">
+          <a
+            href="https://play.google.com/store/apps/details?id=com.codeluminarity.hinetApp"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Get HiNet on Google Play"
+            className="hover:opacity-80 hover:scale-105 transition-all"
+          >
             <Image
               src="/hero/google.svg"
               alt="Get it on Google Play"
@@ -71,7 +77,13 @@ export default function TravelersCTA() {
           </a>
 
           {/* App Store Button */}
-          <a href="#" className="hover:opacity-80 transition-opacity">
+          <a
+            href="https://apps.apple.com/sa/app/hinet-%D9%87%D8%A7%D9%8A-%D9%86%D8%AA-esim/id6748906778"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Download HiNet on the App Store"
+            className="hover:opacity-80 hover:scale-105 transition-all"
+          >
             <Image
               src="/hero/apple.svg"
               alt="Download on the App Store"

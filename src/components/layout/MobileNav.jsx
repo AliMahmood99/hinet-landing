@@ -94,7 +94,7 @@ export default function MobileNav() {
               </div>
 
               <Link
-                href="/contactUs"
+                href="/travelers#get-app"
                 className="w-full text-center border border-[#DEE5ED] bg-white hover:bg-[#F4F6F9] text-[#1F2937] font-semibold rounded-full h-[44px] flex items-center justify-center shadow-sm hover:shadow-md transition-all"
                 onClick={() => setIsOpen(false)}
               >

@@ -1,12 +1,33 @@
 "use client";
 
 import { useTranslations } from "next-intl";
+import { useEffect, useRef, useState } from "react";
 import { ChevronRight, Plane } from "lucide-react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 
 export default function TravelersHero() {
   const t = useTranslations("TravelersHero");
+  const buttonsRef = useRef(null);
+  const [highlight, setHighlight] = useState(false);
+
+  // Trigger pulse-highlight when user arrives via the #get-app anchor
+  useEffect(() => {
+    const trigger = () => {
+      if (typeof window === "undefined") return;
+      if (window.location.hash !== "#get-app") return;
+      // Small delay lets the native smooth-scroll finish before we draw attention
+      setTimeout(() => {
+        if (!buttonsRef.current) return;
+        buttonsRef.current.scrollIntoView({ behavior: "smooth", block: "center" });
+        setHighlight(true);
+        setTimeout(() => setHighlight(false), 2600); // ~one full animation cycle
+      }, 150);
+    };
+    trigger();
+    window.addEventListener("hashchange", trigger);
+    return () => window.removeEventListener("hashchange", trigger);
+  }, []);
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -110,11 +131,21 @@ export default function TravelersHero() {
 
           {/* Buttons */}
           <motion.div
+            id="get-app"
+            ref={buttonsRef}
             variants={itemVariants}
-            className="flex flex-col sm:flex-row items-center gap-4 lg:gap-[20px] mt-4 lg:mt-10"
+            className={`flex flex-col sm:flex-row items-center gap-4 lg:gap-[20px] mt-4 lg:mt-10 scroll-mt-28 ${
+              highlight ? "get-app-highlight" : ""
+            }`}
           >
             {/* Google Play Button */}
-            <a href="#" className="hover:opacity-80 transition-opacity">
+            <a
+              href="https://play.google.com/store/apps/details?id=com.codeluminarity.hinetApp"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Get HiNet on Google Play"
+              className="store-btn-link hover:opacity-90 transition-all"
+            >
               <Image
                 src="/hero/google1.svg"
                 alt="Get it on Google Play"
@@ -125,7 +156,13 @@ export default function TravelersHero() {
             </a>
 
             {/* App Store Button */}
-            <a href="#" className="hover:opacity-80 transition-opacity">
+            <a
+              href="https://apps.apple.com/sa/app/hinet-%D9%87%D8%A7%D9%8A-%D9%86%D8%AA-esim/id6748906778"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Download HiNet on the App Store"
+              className="store-btn-link hover:opacity-90 transition-all"
+            >
               <Image
                 src="/hero/apple1.svg"
                 alt="Download on the App Store"

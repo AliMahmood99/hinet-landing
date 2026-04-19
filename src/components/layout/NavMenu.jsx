@@ -37,7 +37,7 @@ export default function NavMenu() {
 
       {/* Action Buttons */}
       <div className="flex items-center gap-[12px]">
-        <Link href="/contactUs">
+        <Link href="/travelers#get-app">
           <Button
             variant="outline"
             className="border-[#DEE5ED] bg-white hover:bg-[#F4F6F9] text-[#1F2937] font-semibold rounded-[100px] px-[24px] h-[48px] shadow-sm hover:shadow-md transition-all text-[15px]"
