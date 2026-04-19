@@ -29,20 +29,41 @@ function DisabledSocial({ src, alt }) {
 }
 
 /**
- * Disabled app-store badge — shown as "Coming soon" until the apps ship.
+ * App-store badge — opens the store in a new tab when `href` is provided,
+ * otherwise renders as a disabled "Coming soon" placeholder.
  */
-function StoreBadge({ icon: Icon, label, sub }) {
+function StoreBadge({ icon: Icon, label, sub, href }) {
+  const content = (
+    <>
+      <Icon className={styles.storeIcon} aria-hidden="true" />
+      <span className={styles.storeText}>
+        <span className={styles.storeSub}>{sub}</span>
+        <span className={styles.storeLabel}>{label}</span>
+      </span>
+    </>
+  );
+
+  if (href) {
+    return (
+      <a
+        href={href}
+        target="_blank"
+        rel="noopener noreferrer"
+        className={styles.storeBadge}
+        aria-label={`Get HiNet on ${label}`}
+      >
+        {content}
+      </a>
+    );
+  }
+
   return (
     <span
       className={styles.storeBadgeDisabled}
       aria-label={`${label} (coming soon)`}
       title="Coming soon"
     >
-      <Icon className={styles.storeIcon} aria-hidden="true" />
-      <span className={styles.storeText}>
-        <span className={styles.storeSub}>{sub}</span>
-        <span className={styles.storeLabel}>{label}</span>
-      </span>
+      {content}
     </span>
   );
 }
@@ -90,10 +111,20 @@ export default function Footer() {
         </Link>
       </div>
 
-      {/* App Store badges — disabled until apps ship */}
+      {/* App Store badges */}
       <div className={styles.stores}>
-        <StoreBadge icon={Apple} label="App Store" sub="Download on the" />
-        <StoreBadge icon={Play} label="Google Play" sub="Get it on" />
+        <StoreBadge
+          icon={Apple}
+          label="App Store"
+          sub="Download on the"
+          href="https://apps.apple.com/sa/app/hinet-%D9%87%D8%A7%D9%8A-%D9%86%D8%AA-esim/id6748906778"
+        />
+        <StoreBadge
+          icon={Play}
+          label="Google Play"
+          sub="Get it on"
+          href="https://play.google.com/store/apps/details?id=com.codeluminarity.hinetApp"
+        />
       </div>
 
       {/* Social icons — disabled until we have real handles */}
