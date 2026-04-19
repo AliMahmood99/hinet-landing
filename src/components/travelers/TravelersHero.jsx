@@ -21,7 +21,7 @@ export default function TravelersHero() {
         if (!buttonsRef.current) return;
         buttonsRef.current.scrollIntoView({ behavior: "smooth", block: "center" });
         setHighlight(true);
-        setTimeout(() => setHighlight(false), 2600); // ~one full animation cycle
+        setTimeout(() => setHighlight(false), 2100); // ~one full animation cycle
       }, 150);
     };
     trigger();

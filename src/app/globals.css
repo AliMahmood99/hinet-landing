@@ -202,3 +202,69 @@ body {
 .store-btn-link:hover {
   transform: translateY(-2px) scale(1.03);
 }
+
+
+/* ─── Get the App: calm halo highlight on anchor arrival ─────────────
+   Professional, restrained UX: one soft spotlight fade + a gentle lift.
+   No pulsing, no repetition, no scale bounce — just a quiet moment
+   that draws the eye to the download buttons.
+   ─────────────────────────────────────────────────────────────────── */
+.get-app-highlight {
+  position: relative;
+  border-radius: 28px;
+  z-index: 1;
+}
+
+.get-app-highlight::before {
+  content: "";
+  position: absolute;
+  inset: -40px;
+  border-radius: 48px;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(0, 93, 255, 0.16) 0%,
+    rgba(110, 81, 224, 0.10) 35%,
+    rgba(110, 81, 224, 0.0) 68%
+  );
+  filter: blur(28px);
+  opacity: 0;
+  z-index: -1;
+  pointer-events: none;
+  animation: getAppHalo 2s ease-in-out 1 forwards;
+}
+
+.get-app-highlight .store-btn-link {
+  animation: getAppLift 2s ease-in-out 1 forwards;
+}
+
+@keyframes getAppHalo {
+  0%   { opacity: 0; }
+  25%  { opacity: 1; }
+  70%  { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+@keyframes getAppLift {
+  0%   { transform: translateY(0); }
+  25%  { transform: translateY(-3px); }
+  70%  { transform: translateY(-3px); }
+  100% { transform: translateY(0); }
+}
+
+.store-btn-link {
+  display: inline-block;
+  border-radius: 16px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  will-change: transform;
+}
+
+.store-btn-link:hover {
+  transform: translateY(-2px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .get-app-highlight::before,
+  .get-app-highlight .store-btn-link {
+    animation: none;
+  }
+}
